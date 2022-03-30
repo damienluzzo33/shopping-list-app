@@ -18,7 +18,7 @@
         <div v-if="state === 'edit'" class="add-item-form">
             <input type="text" v-model="newItem.label" placeholder="Add an item">
             <p>{{ characterCount }}/200</p>
-            <button class="confirm-btn" @click="saveItem" @keyup.enter="saveItem" v-bind:disabled="newItem.length === 0">Save Item</button>
+            <button class="confirm-btn" @click="saveItem" @keyup.enter="saveItem" v-bind:disabled="newItem.label.length === 0">Save Item</button>
         </div>
         
         <ul>

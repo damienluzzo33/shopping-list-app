@@ -70,6 +70,10 @@ body {
     color: white;
 }
 
+.add-item-form button:disabled {
+    background-color: gray;
+}
+
 ul {
     display: flex;
     flex-direction: column;
