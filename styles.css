@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 10px;
+    width: 100vw;
+    background-color: rgb(44, 44, 44);
+}
+
+#shopping-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 25px 5px;
+    color: white;
+}
+
+.header button {
+    margin: 20px;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: red;
+    color: white;
+}
+
+.header confirm-btn {
+    background-color: green;
+}
+
+.add-item-form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-item-form input {
+    margin: 10px 0px;
+    height: 30px;
+    width: 400px;
+    padding: 5px;
+}
+
+.add-item-form p {
+    margin-bottom: 20px;
+    color: white;
+}
+
+.add-item-form button {
+    margin: 5px;
+    width: 100px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: green;
+    color: white;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+}
+
+li {
+    min-width: 300px;
+    text-align: center;
+    height: 30px;
+    font-weight: 600;
+    font-size: 18px;
+    margin: 2.5px;
+    border: 2px solid cornflowerblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.strikeout {
+    text-decoration: line-through;
+    color: black;
+    background-color: gray;
+}
+

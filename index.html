@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List App</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div id="shopping-list">
+        <div class="header">
+            <h1>{{ header.toLocaleUpperCase() }}</h1>
+            <button v-if="state === 'default'" @click="changeState('edit')" class="confirm-btn">Add Item</button>
+            <button v-else @click="changeState('default')">Cancel</button>
+        </div>
+        
+        <div v-if="state === 'edit'" class="add-item-form">
+            <input type="text" v-model="newItem.label" placeholder="Add an item">
+            <p>{{ characterCount }}/200</p>
+            <button class="confirm-btn" @click="saveItem" @keyup.enter="saveItem" v-bind:disabled="newItem.length === 0">Save Item</button>
+        </div>
+        
+        <ul>
+            <li v-for="item in reversedItems" :class="{strikeout: item.purchased}" @click="togglePurchased(item)">{{ item.label }}</li>
+        </ul>
+
+        <p v-if="items.length === 0">Your List Is Empty.</p>
+    </div>
+    <script src="https://unpkg.com/vue@2"></script>
+    <script src="./vue.js"></script>
+</body>
+</html>
