@@ -4,20 +4,7 @@ var shoppingList = new Vue({
         state: 'default',
         header: 'shopping list app',
         newItem: '',
-        items: [
-            {
-                label: '2 banana bunches',
-                purchased: false,
-            },
-            {
-                label: '4 yogurt 4-packs',
-                purchased: true
-            },
-            {
-                label: '2 almond milks',
-                purchased: false
-            },
-        ],
+        items: JSON.parse(localStorage.getItem("shoppingList")) || []
     },
     computed: {
         characterCount() {
@@ -34,6 +21,7 @@ var shoppingList = new Vue({
                 label: '',
                 purchased: false
             };
+            localStorage.setItem("shoppingList", JSON.stringify(this.items))
         },
         changeState: function(newState) {
             this.state = newState;
@@ -44,6 +32,7 @@ var shoppingList = new Vue({
         },
         togglePurchased: function(item) {
             item.purchased = !item.purchased
+            localStorage.setItem("shoppingList", JSON.stringify(this.items))
         }
     }
 })
